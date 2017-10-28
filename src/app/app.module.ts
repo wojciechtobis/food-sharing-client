@@ -5,24 +5,35 @@ import { AppComponent } from './app.component';
 import { BasicService } from './common/services/basic.service';
 import { HttpModule } from '@angular/http';
 import { HomeComponent } from './common/components/home/home.component';
+import { HomeService } from './common/services/home.service';
 import { Routes, RouterModule } from '@angular/router';
+import { NewOfferComponent } from './common/components/new-offer/new-offer.component';
+import { NewOfferService } from './common/services/new-offer.service';
+import { ReactiveFormsModule } from '@angular/forms';
 
 const appRoutes: Routes = [
   {path: '', redirectTo: 'home', pathMatch: 'full'},
-  { path: 'home', component: HomeComponent }
+  { path: 'home', component: HomeComponent },
+  { path: 'new-offer', component: NewOfferComponent }
 ];
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent
+    HomeComponent,
+    NewOfferComponent
   ],
   imports: [
     RouterModule.forRoot(appRoutes),
     BrowserModule,
-    HttpModule
+    HttpModule,
+    ReactiveFormsModule
   ],
-  providers: [BasicService],
+  providers: [
+    BasicService,
+    HomeService,
+    NewOfferService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

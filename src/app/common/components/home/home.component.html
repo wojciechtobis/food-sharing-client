@@ -1,27 +1,18 @@
-<div>
-	<div class="header rowDiv homePage">
-		<div style="width:60%">Logo</div>
-		<div class="buttonAddDiv">
-			<button class="buttonAdd">SHARE SOME FOOD</button>
-		</div>
+<div class="homePage">
+	<div class="browser rowDiv">
+		<div class="browseText">BROWSE</div>
+		<div class="browseInputs buttonAddDiv">
+			<input class="inputText"/>
+			<button class="buttonSearch">SEARCH</button>
+		</div> 
 	</div>
-	<div class="photo">
-		<div class="photoText">
-			<div class="h1">LOREM IPSUM</div>
-			<div class="h4">dolor sim alet akjakn aka kcn ackjnc askn</div>
-		</div>
-	</div>
-	<div class="homePage">
-		<div class="browser rowDiv">
-			<div class="browseText">BROWSE</div>
-			<div class="browseInputs buttonAddDiv">
-				<input class="inputText"/>
-				<button class="buttonSearch">SEARCH</button>
-			</div> 
-		</div>
-		<div id="tiles">
-			<div *ngFor="let tile of initTiles">
-				{{tile}}
+	<div id="tiles" class="rowDiv">
+		<div *ngFor="let offer of offers">
+			<div class="offerDiv">
+				<div class="offerPhoto">Photo</div>
+				<div class="offerTitle">{{offer.offerDecription}}</div>
+				<div class="offerPlace">{{offer.address}}</div>
+				<div class="offerDate">{{offer.creationDate}}</div>
 			</div>
 		</div>
 	</div>

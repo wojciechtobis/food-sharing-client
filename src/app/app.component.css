@@ -1,0 +1,67 @@
+.homePage{
+	margin: 0 auto;
+	width: 80%;
+	max-width: 1200px;
+	background-color:#f1f1f1;
+}
+
+.rowDiv{
+	display: flex;
+	flex-direction: row;
+}
+
+.header{
+	height: 100px;
+	background-color: white;
+}
+
+.buttonAdd{
+	border-radius: 25px;
+	border: none;
+	background: -webkit-linear-gradient(-7deg, #ff9966 0%, #ffff99 100%);
+	background: -moz-linear-gradient(-7deg, #ff9966 0%, #ffff99 100%);
+	background: -o-linear-gradient(-7deg, #ff9966 0%, #ffff99 100%);
+	background: -ms-linear-gradient(-7deg, #ff9966 0%, #ffff99 100%);
+	background: linear-gradient(97deg, #ff9966 0%, #ffff99 100%);
+	padding: 10px 40px;
+	height: 50px;
+	width: 270px;
+	
+	font-family: Poppins;
+	color:  #ffffff;
+	font-size: 19.85px;
+	font-weight: 800;
+	text-align: center;
+	transform: scaleY(1.0078);
+}
+
+.buttonAddDiv{
+	width:60%;
+	text-align: right;
+}
+
+.photo{
+	background-image: url("/assets/images/basket_mainPhoto.jpg");
+	width: 100% !important;
+}
+
+.h1{
+	font-family: Poppins;
+	color:  #ffffff;
+	font-size: 80px;
+	font-weight: 400;
+	line-height: 72px;
+	text-align: right;
+}
+
+.h4{
+	font-family: OpenSans;
+	color:  #ffffff;
+	font-size: 36px;
+	font-weight: 400;
+	text-align: right;
+}
+
+.photoText{
+	padding: 100px;
+}

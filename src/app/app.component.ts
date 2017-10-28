@@ -1,5 +1,6 @@
 import { BasicService } from './common/services/basic.service';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -8,12 +9,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AppComponent implements OnInit {
 
-  constructor(private basicService: BasicService) {
+  constructor(
+    private basicService: BasicService,
+    private router: Router
+  ) {
   }
 
   ngOnInit(): void {
-    this.basicService.search('test');
-    console.log('test');
+  }
+
+  public addNewOffer() {
+    console.log('clicked');
+    this.router.navigate(['/new-offer']);
   }
 
 }

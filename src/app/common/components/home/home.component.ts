@@ -1,4 +1,7 @@
+import { OfferDto } from '../../dtos/offerdto';
+import { HomeService } from '../../services/home.service';
 import { Component, OnInit } from '@angular/core';
+import 'rxjs/Rx';
 
 @Component({
   selector: 'app-home',
@@ -7,13 +10,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  public initTiles: string[];
+  public offers;
 
-  constructor() { }
+  constructor(private homeService: HomeService) { }
 
   ngOnInit() {
-    console.log('Home screen loaded');
-    this.initTiles = ['one', 'two', 'three', 'four'];
+    const dalsks = this.homeService.getOffers();
+    dalsks.subscribe(res =>  {
+      this.offers = res;
+      console.log(this.offers);
+    });
+
   }
 
 

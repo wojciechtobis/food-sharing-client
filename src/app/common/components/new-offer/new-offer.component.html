@@ -1,0 +1,65 @@
+<div class="newOrderPage">
+	<div class="h1">SHARE SOME FOOD</div>
+</div>
+<div>
+	<div class="title">
+		<div>Title</div>
+		<input type="text"
+			[formControl]="title">
+	</div>
+	<div class="location">
+		<div>Location</div>
+		<input type="text"
+			[formControl]="location">
+	</div>
+	<div class="items">
+		<div>Items</div>
+		<table>
+			<tr>
+				<th>Name</th>
+				<th>Expiration date</th>
+				<th></th>
+			</tr>
+			<tr *ngFor="let it of items">
+				<td>{{it.name}}</td>
+				<td>{{it.date}}</td>
+				<td><button>Delete</button></td>
+			</tr>
+			<tr>
+				<td><input type="text" [formControl]="itemName"></td>
+				<td><input type="date" [formControl]="itemDate"></td>
+				<td><button (click)="addItem()">Add</button></td>
+			</tr>
+		</table>
+	</div>
+	<div>
+		<div>Availability</div>
+		<table>
+			<tr>
+				<th>Provide some information...</th>
+				<th></th>
+			</tr>
+			<tr *ngFor="let avail of availabilities">
+				<td>{{avail}}</td>
+				<td><button>Delete</button></td>
+			</tr>
+			<tr>
+				<td><input type="text" [formControl]="availaibility"></td>
+				<td><button (click)="addAvailability()">Add</button></td>
+			</tr>
+		</table>
+	</div>
+	<div>
+		<div>Your email</div>
+		<input type="email"
+			[formControl]="email">
+	</div>
+	<div>
+		<div>Your phone number</div>
+		<input type="text"
+			[formControl]="phone">
+	</div>
+	<div>
+		<button class="buttonSend" (click)="send()">SEND</button>
+	</div> 
+</div>

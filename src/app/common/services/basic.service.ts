@@ -4,30 +4,15 @@ import { Http } from '@angular/http';
 @Injectable()
 export class BasicService {
   public apiRoot = 'http://fintess.azurewebsites.net/api/';
+//  public apiRoot = 'https://itunes.apple.com/search?term=Moo&media=music&limit=20';
   results: Object[];
   loading: boolean;
 
   constructor(
-    private http: Http
+    public http: Http
   ) {
     this.results = [];
     this.loading = false;
-  }
-
-  search(term: string) {
-    const promise = new Promise((resolve, reject) => {
-      const apiUrl = this.apiRoot;
-      this.http.get(apiUrl)
-      .toPromise()
-      .then(
-        res => {// Success
-          console.log(res.json());
-          resolve();
-        }
-      );
-    });
-
-    return promise;
   }
 
 }
