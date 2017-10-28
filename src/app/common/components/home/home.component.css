@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins');
+
+.homePage{
+	margin: 0 auto;
+	width: 80%;
+	max-width: 1200px;
+	background-color:#f1f1f1;
+}
+.rowDiv{
+	display: flex;
+	flex-direction: row;
+}
+
+.header{
+	height: 100px;
+	background-color: white;
+}
+
+.buttonAdd{
+	border-radius: 25px;
+	border: none;
+	background: -webkit-linear-gradient(-7deg, #ff9966 0%, #ffff99 100%);
+	background: -moz-linear-gradient(-7deg, #ff9966 0%, #ffff99 100%);
+	background: -o-linear-gradient(-7deg, #ff9966 0%, #ffff99 100%);
+	background: -ms-linear-gradient(-7deg, #ff9966 0%, #ffff99 100%);
+	background: linear-gradient(97deg, #ff9966 0%, #ffff99 100%);
+	padding: 10px 40px;
+	height: 50px;
+	width: 270px;
+	
+	font-family: Poppins;
+	color:  #ffffff;
+	font-size: 19.85px;
+	font-weight: 800;
+	text-align: center;
+	transform: scaleY(1.0078);
+}
+
+.inputText{
+	border-radius: 100px;
+	border-width: 1px;
+	border-color:  #ffc17b;
+	border-style: solid;
+	background-color:  #ffffff;
+	width: 270px;
+	height: 40px;
+}
+
+.buttonSearch{
+	border-radius: 25px;
+	border: none;
+	background: -webkit-linear-gradient(-7deg, #ff9966 0%, #ffff99 100%);
+	background: -moz-linear-gradient(-7deg, #ff9966 0%, #ffff99 100%);
+	background: -o-linear-gradient(-7deg, #ff9966 0%, #ffff99 100%);
+	background: -ms-linear-gradient(-7deg, #ff9966 0%, #ffff99 100%);
+	background: linear-gradient(97deg, #ff9966 0%, #ffff99 100%);
+	width: 100px;
+	height: 40px;
+	
+	font-family: Poppins;
+	color:  #ffffff;
+	font-size: 16px;
+	font-weight: 800;
+	text-align: center;
+}
+
+.browser{
+	height: 150px;
+}
+
+.browseText{
+	font-family: Poppins;
+	color:  #1a1a1a;
+	font-size: 45px;
+	font-weight: 800;
+	text-align: left;
+	padding-top: 50px;
+	width:60%
+}
+
+.browseInputs{
+	float: right;
+	width: 70%;
+	padding-top: 65px;
+}
+
+.photo{
+	background-image: url("/assets/images/basket_mainPhoto.jpg");
+	width: 100% !important;
+}
+
+.h1{
+	font-family: Poppins;
+	color:  #ffffff;
+	font-size: 80px;
+	font-weight: 400;
+	line-height: 72px;
+	text-align: right;
+}
+
+.h4{
+	font-family: OpenSans;
+	color:  #ffffff;
+	font-size: 36px;
+	font-weight: 400;
+	text-align: right;
+}
+
+.photoText{
+	padding: 100px;
+}
+
+.buttonAddDiv{
+	width:60%;
+	text-align: right;
+}
