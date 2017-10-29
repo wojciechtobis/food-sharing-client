@@ -22,7 +22,7 @@
 					<th><div class="tips">Expiration date</div></th>
 					<th></th>
 				</tr>
-				<tr *ngFor="let it of items">
+				<tr *ngFor="let it of products">
 					<td> <div class="added">{{it.name}}</div></td>
 					<td> <div class="added">{{it.expirationDate}} </div></td>
 					<td><button class="del" (click)="deleteItem(it)"><span>Delete</span></button></td>

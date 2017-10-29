@@ -1,4 +1,5 @@
 import { OrderDto } from '../dtos/orderdto';
+import { ProductDto } from '../dtos/productdto';
 import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
 import { Observable } from 'rxjs/Rx';
@@ -17,7 +18,7 @@ export class OfferService {
         });
   }
 
-  getProductById(productId: string): Observable<OrderDto[]> {
+  getProductById(productId: string): Observable<ProductDto> {
       const apiUrl = 'https://fintess.azurewebsites.net/api/products/' + productId;
       return this.http.get(apiUrl)
         .map(res =>  {
