@@ -17,4 +17,12 @@ export class OfferService {
         });
   }
 
+  getProductById(productId: string): Observable<OrderDto[]> {
+      const apiUrl = 'http://fintess.azurewebsites.net/api/products/' + productId;
+      return this.http.get(apiUrl)
+        .map(res =>  {
+          return res.json();
+        });
+  }
+
 }

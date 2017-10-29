@@ -1,16 +1,18 @@
 <div class="content">
 		<div class="header">
 			<div class="inline">
-				<p class="titleHead">{{ offer.offerDescription }}</p>
-				<p class="headerfont">{{ offer.address }}</p>
+				<h2>{{ offer.offerDescription }}</h2>
+				<p>{{ offer.address }}</p>
 			</div>
 		</div>
 		<h5>ITEMS</h5>
 			<ul>
 				<li *ngFor="let product of offer.productIds">
-					<div>{{product}}</div>
-					<div>Expiration date</div>
-					<input class="cb" type="checkbox">I take this
+					<div class="listDiv" style="width: 40%">
+						<div style="width: 40%">{{product}}</div>
+						<div style="width: 40%">Expiration date</div>
+						<input class="cb" type="checkbox" (click)="selectProduct(product)">I take this
+					</div>
 				</li>
 			</ul>
 			
@@ -24,12 +26,12 @@
 			<div class="title" style="display:inline-block">
 				<h5>Your Name</h5>
 				<input type="text"
-					[formControl]="">
+					[formControl]="userName">
 			</div>
 			<div class="title" style="display:inline-block">
 				<h5>Your E-mail</h5>
 				<input type="text"
-					[formControl]="">
+					[formControl]="email">
 			</div>
 			<div>
 				<button class="big" (click)="send()">SEND</button>

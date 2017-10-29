@@ -37,7 +37,6 @@ export class NewOfferComponent implements OnInit {
   }
 
   public send() {
-    console.log('clicked send');
     const ids = this.items.map(i => i.id);
     const newOffer = {
       address: this.location.value,

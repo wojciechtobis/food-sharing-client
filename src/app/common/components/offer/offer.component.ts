@@ -1,5 +1,6 @@
 import { OfferService } from '../../services/offer.service';
 import { Component, OnInit } from '@angular/core';
+import { FormControl } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
@@ -16,22 +17,34 @@ export class OfferComponent implements OnInit {
 
   private offerId: string;
   public offer;
+  selectedProducts;
+
+  email: FormControl;
+  userName: FormControl;
 
   ngOnInit() {
+    this.email = new FormControl();
+    this.userName = new FormControl();
+
     this.activatedRouter.queryParams
       .subscribe(params => {
         this.offerId = params['offerId'];
       });
 
-    const sadn = this.offerService.getOffersById(this.offerId);
-    sadn.subscribe(res => {
+    const offersById = this.offerService.getOffersById(this.offerId);
+    offersById.subscribe(res => {
       this.offer = res;
     });
 
   }
 
   public send() {
+    console.log('clicked send');
 
+  }
+
+  public selectProduct(product) {
+    this.selectedProducts = [];
   }
 
 }
