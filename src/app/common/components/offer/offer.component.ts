@@ -22,6 +22,7 @@ export class OfferComponent implements OnInit {
 
   email: FormControl;
   userName: FormControl;
+  public products;
 
   ngOnInit() {
     this.email = new FormControl();
@@ -36,7 +37,7 @@ export class OfferComponent implements OnInit {
     offersById.subscribe(res => {
       this.offer = res;
     });
-
+    this.products = this.offer.productIds.map(id => this.offerService.getProductById(id));
   }
 
   public send() {

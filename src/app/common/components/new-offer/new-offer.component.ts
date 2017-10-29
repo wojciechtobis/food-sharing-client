@@ -21,7 +21,7 @@ export class NewOfferComponent implements OnInit {
   userName: FormControl;
   foundationsOnly: FormControl;
 
-  items: {name: String, expirationDate: String, id: String}[];
+  products: {name: String, expirationDate: String}[];
   availabilities: string[];
 
   ngOnInit() {
@@ -35,11 +35,10 @@ export class NewOfferComponent implements OnInit {
     this.foundationsOnly = new FormControl();
 
     this.availabilities = [];
-    this.items = [];
+    this.products = [];
   }
 
   public send() {
-    const ids = this.items.map(i => i.id);
     const newOffer = {
       address: this.location.value,
       receiveTimes: this.availabilities,
@@ -48,7 +47,7 @@ export class NewOfferComponent implements OnInit {
       offerDescription: this.title.value,
       ownerName: this.userName.value,
       ownerEmail: this.email.value,
-      productIds: ids
+      products: this.products
     };
     let respGuid;
     this.newOfferService.postNewOffer(newOffer)
@@ -65,16 +64,8 @@ export class NewOfferComponent implements OnInit {
     const newItemDate = this.itemDate.value;
     const newItem = {name: newItemName, expirationDate: newItemDate};
     console.log('clicked add');
-    if (newItemName && newItemDate && this.items.filter(v => v.expirationDate === newItemDate && v.name === newItemName).length === 0) {
-      let respGuid;
-      this.newOfferService.postNewProduct(newItem)
-        .subscribe(res => {
-          respGuid = res;
-          console.log(respGuid);
-          if (respGuid.length === 36) {
-            this.items.push({name: newItemName, expirationDate: newItemDate, id: respGuid});
-          }
-        });
+    if (newItemName && newItemDate && this.products.filter(v => v.expirationDate === newItemDate && v.name === newItemName).length === 0) {
+      this.products.push({name: newItemName, expirationDate: newItemDate});
     }
     this.itemName.setValue('');
     this.itemDate.setValue('');
@@ -94,6 +85,6 @@ export class NewOfferComponent implements OnInit {
   }
 
   public deleteItem(item) {
-    this.items = this.items.filter(v => v.name !== item.name || v.expirationDate !== item.expirationDate);
+    this.products = this.products.filter(v => v.name !== item.name || v.expirationDate !== item.expirationDate);
   }
 }
