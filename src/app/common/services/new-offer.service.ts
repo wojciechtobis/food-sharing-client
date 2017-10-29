@@ -11,7 +11,7 @@ export class NewOfferService {
   constructor(public http: Http) { }
 
   postNewOffer(offer): Observable<GuidResponseDto> {
-      const apiUrl = 'http://fintess.azurewebsites.net/api/offers/create/';
+      const apiUrl = 'https://fintess.azurewebsites.net/api/offers/create/';
       const headers = new Headers({
         'Content-Type': 'application/json; charset=utf-8',
         'Access-Control-Allow-Origin': '*',
@@ -25,7 +25,7 @@ export class NewOfferService {
   }
 
   postNewProduct(product): Observable<GuidResponseDto> {
-      const apiUrl = 'http://fintess.azurewebsites.net/api/products/create/';
+      const apiUrl = 'https://fintess.azurewebsites.net/api/products/create/';
       const headers = new Headers({
         'Content-Type': 'application/json; charset=utf-8',
         'Access-Control-Allow-Origin': '*',

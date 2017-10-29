@@ -10,7 +10,7 @@ export class OfferService {
   constructor(public http: Http) { }
 
   getOffersById(offerId: string): Observable<OrderDto[]> {
-      const apiUrl = 'http://fintess.azurewebsites.net/api/offers/' + offerId;
+      const apiUrl = 'https://fintess.azurewebsites.net/api/offers/' + offerId;
       return this.http.get(apiUrl)
         .map(res =>  {
           return res.json();
@@ -18,7 +18,7 @@ export class OfferService {
   }
 
   getProductById(productId: string): Observable<OrderDto[]> {
-      const apiUrl = 'http://fintess.azurewebsites.net/api/products/' + productId;
+      const apiUrl = 'https://fintess.azurewebsites.net/api/products/' + productId;
       return this.http.get(apiUrl)
         .map(res =>  {
           return res.json();

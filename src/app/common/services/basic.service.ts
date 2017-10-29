@@ -3,7 +3,7 @@ import { Http } from '@angular/http';
 
 @Injectable()
 export class BasicService {
-  public apiRoot = 'http://fintess.azurewebsites.net/api/';
+  public apiRoot = 'https://fintess.azurewebsites.net/api/';
 //  public apiRoot = 'https://itunes.apple.com/search?term=Moo&media=music&limit=20';
   results: Object[];
   loading: boolean;

@@ -11,7 +11,7 @@ export class HomeService {
   }
 
   getOffers(): Observable<OrderDto[]> {
-      const apiUrl = 'http://fintess.azurewebsites.net/api/offers/';
+      const apiUrl = 'https://fintess.azurewebsites.net/api/offers/';
       return this.http.get(apiUrl)
         .map(res =>  {
           return res.json();
@@ -19,7 +19,7 @@ export class HomeService {
   }
 
   getOffersByText(text: string, isFoundation: boolean): Observable<OrderDto[]> {
-      const apiUrl = 'http://fintess.azurewebsites.net/api/search?query=' + text + '&isFoundation=' + isFoundation;
+      const apiUrl = 'https://fintess.azurewebsites.net/api/search?query=' + text + '&isFoundation=' + isFoundation;
       return this.http.get(apiUrl)
         .map(res =>  {
           return res.json();
