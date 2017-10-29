@@ -1,6 +1,7 @@
 import { NewOfferService } from '../../services/new-offer.service';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, ReactiveFormsModule } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-new-offer',
@@ -9,7 +10,7 @@ import { FormGroup, FormControl, ReactiveFormsModule } from '@angular/forms';
 })
 export class NewOfferComponent implements OnInit {
 
-  constructor(private newOfferService: NewOfferService) { }
+  constructor(private newOfferService: NewOfferService, private router: Router) { }
 
   title: FormControl;
   location: FormControl;
@@ -46,9 +47,13 @@ export class NewOfferComponent implements OnInit {
       ownerEmail: this.email.value,
       productIds: ['69311a62-7446-46b8-be79-a8a8534c56d8']
     };
+    let respGuid;
     this.newOfferService.postNewOffer(newOffer)
       .subscribe(res => {
-        console.log(res);
+        respGuid = res;
+        if (respGuid.length === 36) {
+            this.router.navigate(['/new-offer-confirm']);
+          }
       });
   }
 

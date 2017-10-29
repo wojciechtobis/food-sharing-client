@@ -15,7 +15,8 @@ import { OfferComponent } from './common/components/offer/offer.component';
 const appRoutes: Routes = [
   {path: '', redirectTo: 'home', pathMatch: 'full'},
   { path: 'home', component: HomeComponent },
-  { path: 'new-offer', component: NewOfferComponent }
+  { path: 'new-offer', component: NewOfferComponent },
+  { path: 'new-offer-confirm', component: NewOfferConfirmComponent}
 ];
 
 @NgModule({
