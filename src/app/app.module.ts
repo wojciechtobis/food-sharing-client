@@ -13,13 +13,17 @@ import { NewOfferService } from './common/services/new-offer.service';
 import { ReactiveFormsModule } from '@angular/forms';
 import { OfferComponent } from './common/components/offer/offer.component';
 import {MatCardModule} from '@angular/material';
+import { NewOrderConfirmComponent } from './common/components/new-order-confirm/new-order-confirm.component';
+
 
 const appRoutes: Routes = [
   {path: '', redirectTo: 'home', pathMatch: 'full'},
   { path: 'home', component: HomeComponent },
   { path: 'new-offer', component: NewOfferComponent },
   { path: 'new-offer-confirm', component: NewOfferConfirmComponent},
-  { path: 'offer', component: OfferComponent}
+  { path: 'offer', component: OfferComponent},
+  { path: 'new-order-confirm', component: NewOrderConfirmComponent}
+
 ];
 
 @NgModule({
@@ -28,7 +32,8 @@ const appRoutes: Routes = [
     HomeComponent,
     NewOfferComponent,
     OfferComponent,
-    NewOfferConfirmComponent
+    NewOfferConfirmComponent,
+    NewOrderConfirmComponent
   ],
   imports: [
     RouterModule.forRoot(appRoutes),
