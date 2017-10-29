@@ -1,12 +1,12 @@
 <div class="content">
         <div class="header">
             <div class="inline">
-                <h2>{{ offer.offerDescription }}</h2>
-                <p class="location"> <img src="https://i.imgur.com/EA94X9e.png"/>{{ offer.address }}</p>
+                <h2 *ngIf="!!offer">{{ offer.offerDescription }}</h2>
+                <p class="location" *ngIf="!!offer"> <img src="https://i.imgur.com/EA94X9e.png"/>{{ offer.address }}</p>
             </div>
         </div>
         <h5>ITEMS</h5>
-            <ul>
+            <ul *ngIf="!!offer">
                 <li *ngFor="let product of offer.products">
                     <div class="listDiv" style="width: 100%;display: flex;flex-direction: row;     justify-content: space-around; align-items: center;">
                         <p style="width: 50%;">{{product.name}}</p>
@@ -19,7 +19,7 @@
             </ul>
            
         <h5>TIME</h5>
-            <ul>
+            <ul *ngIf="!!offer">
                 <li *ngFor="let receiveTime of offer.receiveTimes" >
                 <div class="listDiv">
                     <p style="width: 70%;">{{receiveTime}}</p>

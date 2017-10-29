@@ -45,11 +45,11 @@ export class OfferComponent implements OnInit {
     console.log('clicked send');
 
     const newOrder = {
-      productIds: this.selectedProducts,
-      requestorName: this.userName.value,
       requestorEmail: this.email.value,
       receiveTime: this.selectedTime,
-      offerId: this.offerId
+      offerId: this.offerId,
+      productIds: this.selectedProducts,
+      requestorName: this.userName.value
     };
 
     this.offerService.postNewOrder(newOrder);
