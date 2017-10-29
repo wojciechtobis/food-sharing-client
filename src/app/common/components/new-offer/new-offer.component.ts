@@ -39,13 +39,17 @@ export class NewOfferComponent implements OnInit {
     console.log('clicked send');
     const newOffer = {
       address: this.location.value,
-      receiveTime: this.availaibility,
+      receiveTimes: this.availabilities,
       isForFoundationOnly: false,
       offerDescription: this.title.value,
-      ownerId: 1,
-      productsId: []
+      ownerName: 1,
+      ownerEmail: this.email.value,
+      productIds: ['8ae39b7a-d064-48e2-8550-30a65da38a4d']
     };
-    this.newOfferService.postNewOffer(newOffer);
+    this.newOfferService.postNewOffer(newOffer)
+      .subscribe(res => {
+        console.log(res);
+      });
   }
 
   public addItem() {

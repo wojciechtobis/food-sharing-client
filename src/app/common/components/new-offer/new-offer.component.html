@@ -1,28 +1,26 @@
-<div class="newOrderPage">
-	<div class="h1">SHARE SOME FOOD</div>
-</div>
-<div>
+
+<div class="newOfferPage">
 	<div class="title">
-		<div>Title</div>
+		<h5>Title</h5>
 		<input type="text"
 			[formControl]="title">
 	</div>
 	<div class="location">
-		<div>Location</div>
+		<h5>Location</h5>
 		<input type="text"
 			[formControl]="location">
 	</div>
 	<div class="items">
-		<div>Items</div>
+		<h5>Items</h5>
 		<table>
 			<tr>
-				<th>Name</th>
-				<th>Expiration date</th>
+				<th><div class="tips">Name</div></th>
+				<th><div class="tips">Expiration date</div></th>
 				<th></th>
 			</tr>
 			<tr *ngFor="let it of items">
-				<td>{{it.name}}</td>
-				<td>{{it.date}}</td>
+				<td> <div class="added">{{it.name}}</div></td>
+				<td> <div class="added">{{it.date}} </div></td>
 				<td><button>Delete</button></td>
 			</tr>
 			<tr>
@@ -32,8 +30,8 @@
 			</tr>
 		</table>
 	</div>
-	<div>
-		<div>Availability</div>
+	<div class="availability">
+		<h5>Availability</h5>
 		<table>
 			<tr>
 				<th>Provide some information...</th>
@@ -45,21 +43,22 @@
 			</tr>
 			<tr>
 				<td><input type="text" [formControl]="availaibility"></td>
-				<td><button (click)="addAvailability()">Add</button></td>
+							<td><button (click)="addAvailability()">Add</button></td>
 			</tr>
 		</table>
 	</div>
-	<div>
-		<div>Your email</div>
-		<input type="email"
-			[formControl]="email">
+	<div class="name">
+		<h5>Your name</h5>
+		<input type="email" 		[formControl]="email">
 	</div>
-	<div>
-		<div>Your phone number</div>
+	<div class="email">
+		<h5>Your e-mail</h5>
 		<input type="text"
 			[formControl]="phone">
 	</div>
 	<div>
 		<button class="buttonSend" (click)="send()">SEND</button>
 	</div> 
-</div>
+</div>>
+
+				
