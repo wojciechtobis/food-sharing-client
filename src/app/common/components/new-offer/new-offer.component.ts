@@ -43,7 +43,8 @@ export class NewOfferComponent implements OnInit {
     const newOffer = {
       address: this.location.value,
       receiveTimes: this.availabilities,
-      isForFoundationOnly: this.foundationsOnly.value,
+      isForFoundationOnly: this.foundationsOnly.value == null || this.foundationsOnly.value === undefined
+        ? false : this.foundationsOnly.value,
       offerDescription: this.title.value,
       ownerName: this.userName.value,
       ownerEmail: this.email.value,
