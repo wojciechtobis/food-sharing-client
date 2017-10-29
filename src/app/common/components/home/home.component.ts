@@ -3,6 +3,7 @@ import { HomeService } from '../../services/home.service';
 import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import 'rxjs/Rx';
+import {MatCardModule} from '@angular/material';
 
 @Component({
   selector: 'app-home',

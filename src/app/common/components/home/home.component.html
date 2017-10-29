@@ -9,15 +9,15 @@
 	</div>
 	<div id="tiles" class="rowDiv">
 		<div *ngFor="let offer of offers">
-			<a href="#" (onclick)="looolClick()">
+			<mat-card [routerLink]="['/new-offer-confirm']">
 				<div class="offerDiv">
-					<div class="offerPhoto">Photo</div>
+					<div class="offerPhoto"><img class="offerPhoto" src="{{offer.offerImage}}"></div>
 					<div class="offerTitle">{{offer.offerDecription}}</div>
 					<div class="offerPlace">{{offer.address}}</div>
 					<div class="offerDate">{{offer.creationDate}}</div>
 					<div>{{offer.offerId}}</div>
 				</div>
-			</a>
+			</mat-card>
 		</div>
 	</div>
 </div>

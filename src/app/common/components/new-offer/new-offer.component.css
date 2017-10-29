@@ -58,7 +58,7 @@ p, table{
 }
 
 button{
-  	background: -webkit-linear-gradient(-7deg, #ff9966 0%, #ffff99 100%);
+	background: -webkit-linear-gradient(-7deg, #ff9966 0%, #ffff99 100%);
 	background: -moz-linear-gradient(-7deg, #ff9966 0%, #ffff99 100%);
 	background: -o-linear-gradient(-7deg, #ff9966 0%, #ffff99 100%);
 	background: -ms-linear-gradient(-7deg, #ff9966 0%, #ffff99 100%);
@@ -104,6 +104,11 @@ td{
 	height: 55px;
 	width: 200px!important;
 	border-radius: 50px;
+	background: -webkit-linear-gradient(-7deg, #ff9966 0%, #ffff99 100%);
+	background: -moz-linear-gradient(-7deg, #ff9966 0%, #ffff99 100%);
+	background: -o-linear-gradient(-7deg, #ff9966 0%, #ffff99 100%);
+	background: -ms-linear-gradient(-7deg, #ff9966 0%, #ffff99 100%);
+	background: linear-gradient(97deg, #ff9966 0%, #ffff99 100%);
 }
 
 button:hover{
@@ -112,28 +117,31 @@ button:hover{
 	cursor: pointer;
 }
 
-@media(max-width:600px){
+@media(max-width:500px){
 	button span{
 		display: none;
 	}
 
 	button{
-		background: -webkit-linear-gradient(-7deg, #ff9966 0%, #ffff99 100%);
-		background: -moz-linear-gradient(-7deg, #ff9966 0%, #ffff99 100%);
-		background: -o-linear-gradient(-7deg, #ff9966 0%, #ffff99 100%);
-		background: -ms-linear-gradient(-7deg, #ff9966 0%, #ffff99 100%);
-		background: linear-gradient(97deg, #ff9966 0%, #ffff99 100%);
-		background: no-repeat;
-		background: center;
+		background: url("/assets/images/plus.png"), -webkit-linear-gradient(-7deg, #ff9966 0%, #ffff99 100%);
+		background: url("/assets/images/plus.png"), -moz-linear-gradient(-7deg, #ff9966 0%, #ffff99 100%);
+		background: url("/assets/images/plus.png"), -o-linear-gradient(-7deg, #ff9966 0%, #ffff99 100%);
+		background: url("/assets/images/plus.png"), -ms-linear-gradient(-7deg, #ff9966 0%, #ffff99 100%);
+		background: url("/assets/images/plus.png"), linear-gradient(97deg, #ff9966 0%, #ffff99 100%);
+		background-repeat: no-repeat;
+		background-position: center;
 		min-width:45px;
 	}
 
 	.del{
-		background: -webkit-linear-gradient(-7deg, #ff9966 0%, #ffff99 100%);
-		background: -moz-linear-gradient(-7deg, #ff9966 0%, #ffff99 100%);
-		background: -o-linear-gradient(-7deg, #ff9966 0%, #ffff99 100%);
-		background: -ms-linear-gradient(-7deg, #ff9966 0%, #ffff99 100%);
-		background: linear-gradient(97deg, #ff9966 0%, #ffff99 100%);
+		background: url("/assets/images/minus.png"), -webkit-linear-gradient(-7deg, #ff9966 0%, #ffff99 100%);
+		background: url("/assets/images/minus.png"), -moz-linear-gradient(-7deg, #ff9966 0%, #ffff99 100%);
+		background: url("/assets/images/minus.png"), -o-linear-gradient(-7deg, #ff9966 0%, #ffff99 100%);
+		background: url("/assets/images/minus.png"), -ms-linear-gradient(-7deg, #ff9966 0%, #ffff99 100%);
+		background: url("/assets/images/minus.png"), linear-gradient(97deg, #ff9966 0%, #ffff99 100%);
+  		background-repeat: no-repeat;
+  		background-position: center;
+  		min-width:45px;
 	}
 }
 
