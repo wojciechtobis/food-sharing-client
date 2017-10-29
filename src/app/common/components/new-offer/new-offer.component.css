@@ -22,14 +22,14 @@ h2{
 h5 {
 	text-transform: uppercase;
 	font-size: 26px;
-	font-family: Open sans, sans-serif;
+	font-family: Open Sans, sans-serif;
 	font-weight: 700;
 	margin: 0px;
 	padding: 5px 0px;
 }
 
 input, .added{
-	font-family: Open sans, sans-serif;
+	font-family: Open Sans, sans-serif;
 	font-size: 16px;
 	border: 1px solid #ffc17b;
 	border-radius: 20px;
@@ -46,7 +46,7 @@ input{
 }
 
 .tips{
-	font-family: Open sans, sans-serif;
+	font-family: Open Sans, sans-serif;
 	font-size: 12px;
 	font-style: italic;
 	font-weight: 400;
@@ -55,7 +55,7 @@ input{
 }
 
 p, table{
-	font-family: Open sans, sans-serif;
+	font-family: Open Sans, sans-serif;
 	font-size: 16px;
 }
 
