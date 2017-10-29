@@ -3,7 +3,7 @@
     <div class="browser rowDiv" style="display: flex; flex-direction: row;align-items: center; flex-wrap: wrap;">
         <h2 style="width: 60%">BROWSE</h2>
         <div class="browseInputs buttonAddDiv" style="display: flex; flex-direction: row;align-items: center;">
-        	<label><input type="checkbox" [formControl]="filterCheckbox"/>I AM FOUNDATION</label>
+        	<label><input type="checkbox" [(formControl)]="filterCheckbox"/>I AM FOUNDATION</label>
             <input class="inputText" style="height: 25px; margin:0 20px 0 0; "
                 [formControl]="searchText">
             <button  style="width: 200px;"(click)="searchOffer()">SEARCH</button>
