@@ -14,6 +14,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { OfferComponent } from './common/components/offer/offer.component';
 import {MatCardModule} from '@angular/material';
 import { NewOrderConfirmComponent } from './common/components/new-order-confirm/new-order-confirm.component';
+import { OfferService } from './common/services/offer.service';
 
 
 const appRoutes: Routes = [
@@ -45,7 +46,8 @@ const appRoutes: Routes = [
   providers: [
     BasicService,
     HomeService,
-    NewOfferService
+    NewOfferService,
+    OfferService
   ],
   bootstrap: [AppComponent]
 })

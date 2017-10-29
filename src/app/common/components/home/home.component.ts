@@ -35,8 +35,4 @@ export class HomeComponent implements OnInit {
     });
   }
 
-  public looolClick() {
-    console.log('loolClickadsasdsads');
-  }
-
 }

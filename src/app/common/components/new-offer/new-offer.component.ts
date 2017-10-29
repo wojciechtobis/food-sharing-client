@@ -45,7 +45,7 @@ export class NewOfferComponent implements OnInit {
       offerDescription: this.title.value,
       ownerName: this.userName.value,
       ownerEmail: this.email.value,
-      productIds: ['69311a62-7446-46b8-be79-a8a8534c56d8']
+      productIds: ['38051927-7479-4afc-8372-ed283234e303']
     };
     let respGuid;
     this.newOfferService.postNewOffer(newOffer)

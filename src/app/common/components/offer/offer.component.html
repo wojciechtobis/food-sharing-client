@@ -1,3 +1,37 @@
-<p>
-  offer works!
-</p>
+<div class="content">
+		<div class="header">
+			<div class="inline">
+				<p class="titleHead">{{ offer.offerDescription }}</p>
+				<p class="headerfont">{{ offer.address }}</p>
+			</div>
+		</div>
+		<h5>ITEMS</h5>
+			<ul>
+				<li *ngFor="let product of offer.productIds">
+					<div>{{product}}</div>
+					<div>Expiration date</div>
+					<input class="cb" type="checkbox">I take this
+				</li>
+			</ul>
+			
+		<h5>TIME</h5>
+			<ul>
+				<li *ngFor="let receiveTime of offer.receiveTimes">
+					<div class="font">{{receiveTime}}</div>
+					<input class="cb" type="checkbox">I take this
+				</li>
+			</ul>
+			<div class="title" style="display:inline-block">
+				<h5>Your Name</h5>
+				<input type="text"
+					[formControl]="">
+			</div>
+			<div class="title" style="display:inline-block">
+				<h5>Your E-mail</h5>
+				<input type="text"
+					[formControl]="">
+			</div>
+			<div>
+				<button class="big" (click)="send()">SEND</button>
+			</div> 
+		</div>
