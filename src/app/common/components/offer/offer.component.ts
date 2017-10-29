@@ -18,7 +18,8 @@ export class OfferComponent implements OnInit {
 
   private offerId: string;
   public offer;
-  selectedProducts;
+  selectedProducts: string[];
+  selectedTime: string;
 
   email: FormControl;
   userName: FormControl;
@@ -37,16 +38,37 @@ export class OfferComponent implements OnInit {
     offersById.subscribe(res => {
       this.offer = res;
     });
-    this.products = this.offer.productIds.map(id => this.offerService.getProductById(id));
+
   }
 
   public send() {
     console.log('clicked send');
+
+    const newOrder = {
+      productIds: this.selectedProducts,
+      requestorName: this.userName.value,
+      requestorEmail: this.email.value,
+      receiveTime: this.selectedTime,
+      offerId: this.offerId
+    };
+
+    this.offerService.postNewOrder(newOrder);
     this.router.navigate(['/new-order-confirm']);
   }
 
-  public selectProduct(product) {
-    this.selectedProducts = [];
+  public selectProduct(productId) {
+    if (!this.selectedProducts) {
+      this.selectedProducts = [productId];
+      return;
+    }
+    if (this.selectedProducts.filter(v => v === productId).length === 0) {
+      this.selectedProducts.push(productId);
+    } else {
+      this.selectedProducts = this.selectedProducts.filter(v => v !== productId);
+    }
   }
 
+  public selectTime(receiveTime) {
+      this.selectedTime = receiveTime;
+  }
 }
