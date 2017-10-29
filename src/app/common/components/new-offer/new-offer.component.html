@@ -24,8 +24,8 @@
 				</tr>
 				<tr *ngFor="let it of items">
 					<td> <div class="added">{{it.name}}</div></td>
-					<td> <div class="added">{{it.date}} </div></td>
-					<td><button class="del"><span>Delete</span></button></td>
+					<td> <div class="added">{{it.expirationDate}} </div></td>
+					<td><button class="del" (click)="deleteItem(it)"><span>Delete</span></button></td>
 				</tr>
 				<tr>
 					<td><input type="text" [formControl]="itemName"></td>
@@ -44,7 +44,7 @@
 				<tr *ngFor="let avail of availabilities">
 					<td ><div class="added">{{avail}}</div></td>
 					
-					<td><button class="del"><span>Delete</span></button></td>
+					<td><button class="del" (click)="deleteAvailability(avail)"><span>Delete</span></button></td>
 				</tr>
 				<tr>
 					<td ><input type="text" [formControl]="availaibility"></td>

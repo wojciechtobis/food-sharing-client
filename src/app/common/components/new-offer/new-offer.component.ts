@@ -20,7 +20,7 @@ export class NewOfferComponent implements OnInit {
   email: FormControl;
   userName: FormControl;
 
-  items: {name: String, date: String}[];
+  items: {name: String, expirationDate: String, id: String}[];
   availabilities: string[];
 
   ngOnInit() {
@@ -38,6 +38,7 @@ export class NewOfferComponent implements OnInit {
 
   public send() {
     console.log('clicked send');
+    const ids = this.items.map(i => i.id);
     const newOffer = {
       address: this.location.value,
       receiveTimes: this.availabilities,
@@ -45,7 +46,7 @@ export class NewOfferComponent implements OnInit {
       offerDescription: this.title.value,
       ownerName: this.userName.value,
       ownerEmail: this.email.value,
-      productIds: ['69311a62-7446-46b8-be79-a8a8534c56d8']
+      productIds: ids
     };
     let respGuid;
     this.newOfferService.postNewOffer(newOffer)
@@ -60,10 +61,17 @@ export class NewOfferComponent implements OnInit {
   public addItem() {
     const newItemName = this.itemName.value;
     const newItemDate = this.itemDate.value;
-    const newItem = {name: newItemName, date: newItemDate};
+    const newItem = {name: newItemName, expirationDate: newItemDate};
 
-    if (newItemName && newItemDate && this.items.filter(v => v.date === newItemDate && v.name === newItemName).length === 0) {
-      this.items.push(newItem);
+    if (newItemName && newItemDate && this.items.filter(v => v.expirationDate === newItemDate && v.name === newItemName).length === 0) {
+      let respGuid;
+      this.newOfferService.postNewProduct(newItem)
+      .subscribe(res => {
+        respGuid = res;
+        if (respGuid.length === 36) {
+          this.items.push({name: newItemName, expirationDate: newItemDate, id: respGuid});
+        }
+      });
     }
   }
 
@@ -80,6 +88,6 @@ export class NewOfferComponent implements OnInit {
   }
 
   public deleteItem(item) {
-    this.items = this.items.filter(v => v.name !== item.name || v.date !== item.date);
+    this.items = this.items.filter(v => v.name !== item.name || v.expirationDate !== item.expirationDate);
   }
 }
