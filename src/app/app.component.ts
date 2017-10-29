@@ -23,4 +23,8 @@ export class AppComponent implements OnInit {
     this.router.navigate(['/new-offer']);
   }
 
+   public backToMain() {
+    this.router.navigate(['/home']);
+  }
+
 }

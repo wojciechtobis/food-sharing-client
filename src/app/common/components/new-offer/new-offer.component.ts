@@ -45,11 +45,15 @@ export class NewOfferComponent implements OnInit {
       offerDescription: this.title.value,
       ownerName: 1,
       ownerEmail: this.email.value,
-      productIds: ['8ae39b7a-d064-48e2-8550-30a65da38a4d']
+      productIds: ['69311a62-7446-46b8-be79-a8a8534c56d8']
     };
+    let respGuid;
     this.newOfferService.postNewOffer(newOffer)
       .subscribe(res => {
-        console.log(res);
+        respGuid = res;
+        if (respGuid.length === 36) {
+            this.router.navigate(['/new-offer-confirm']);
+          }
       });
   }
 
