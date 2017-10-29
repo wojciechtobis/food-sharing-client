@@ -10,6 +10,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { NewOfferComponent } from './common/components/new-offer/new-offer.component';
 import { NewOfferService } from './common/services/new-offer.service';
 import { ReactiveFormsModule } from '@angular/forms';
+import { OfferComponent } from './common/components/offer/offer.component';
 
 const appRoutes: Routes = [
   {path: '', redirectTo: 'home', pathMatch: 'full'},
@@ -21,7 +22,8 @@ const appRoutes: Routes = [
   declarations: [
     AppComponent,
     HomeComponent,
-    NewOfferComponent
+    NewOfferComponent,
+    OfferComponent
   ],
   imports: [
     RouterModule.forRoot(appRoutes),

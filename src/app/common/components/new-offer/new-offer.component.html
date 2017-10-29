@@ -1,64 +1,72 @@
 
-<div class="newOfferPage">
-	<div class="title">
-		<h5>Title</h5>
-		<input type="text"
-			[formControl]="title">
-	</div>
-	<div class="location">
-		<h5>Location</h5>
-		<input type="text"
-			[formControl]="location">
-	</div>
-	<div class="items">
-		<h5>Items</h5>
-		<table>
-			<tr>
-				<th><div class="tips">Name</div></th>
-				<th><div class="tips">Expiration date</div></th>
-				<th></th>
-			</tr>
-			<tr *ngFor="let it of items">
-				<td> <div class="added">{{it.name}}</div></td>
-				<td> <div class="added">{{it.date}} </div></td>
-				<td><button>Delete</button></td>
-			</tr>
-			<tr>
-				<td><input type="text" [formControl]="itemName"></td>
-				<td><input type="date" [formControl]="itemDate"></td>
-				<td><button (click)="addItem()">Add</button></td>
-			</tr>
-		</table>
-	</div>
-	<div class="availability">
-		<h5>Availability</h5>
-		<table>
-			<tr>
-				<th>Provide some information...</th>
-				<th></th>
-			</tr>
-			<tr *ngFor="let avail of availabilities">
-				<td>{{avail}}</td>
-				<td><button>Delete</button></td>
-			</tr>
-			<tr>
-				<td><input type="text" [formControl]="availaibility"></td>
-							<td><button (click)="addAvailability()">Add</button></td>
-			</tr>
-		</table>
-	</div>
-	<div class="name">
-		<h5>Your name</h5>
-		<input type="email" 		[formControl]="email">
-	</div>
-	<div class="email">
-		<h5>Your e-mail</h5>
-		<input type="text"
-			[formControl]="phone">
+<div class="content">
+	<div class="newOrderPage">
+		<h2>SHARE SOME FOOD</h2>
 	</div>
 	<div>
-		<button class="buttonSend" (click)="send()">SEND</button>
-	</div> 
-</div>>
+		<div class="title">
+			<h5>Title</h5>
+			<input type="text"
+				[formControl]="title">
+		</div>
+		<div class="location">
+			<h5>Location</h5>
+			<input type="text"
+				[formControl]="location">
+		</div>
+		<div class="items">
+			<h5>Items</h5>
+			<table>
+				<tr>
+					<th><div class="tips">Name</div></th>
+					<th><div class="tips">Expiration date</div></th>
+					<th></th>
+				</tr>
+				<tr *ngFor="let it of items">
+					<td> <div class="added">{{it.name}}</div></td>
+					<td> <div class="added">{{it.date}} </div></td>
+					<td><button class="del"><span>Delete</span></button></td>
+				</tr>
+				<tr>
+					<td><input type="text" [formControl]="itemName"></td>
+					<td><input type="date" [formControl]="itemDate"></td>
+					<td><button (click)="addItem()"><span>Add</span></button></td>
+				</tr>
+			</table>
+		</div>
+		<div class="availability">
+			<h5>Availability</h5>
+			<table>
+				<tr>
+					<th><div class="tips">Provide some information...</div></th>
+					<th></th>
+				</tr>
+				<tr *ngFor="let avail of availabilities">
+					<td ><div class="added">{{avail}}</div></td>
+					
+					<td><button class="del"><span>Delete</span></button></td>
+				</tr>
+				<tr>
+					<td ><input type="text" [formControl]="availaibility"></td>
+				
+								<td><button (click)="addAvailability()"><span>Add</span></button></td>
+				</tr>
+			</table>
+		</div>
+		<div class="email">
+			<h5>Your name</h5>
+			<input type="email" 		
+				[formControl]="email">
+		</div>
+		<div class="userName">
+			<h5>Your e-mail</h5>
+			<input type="text"
+				[formControl]="userName">
+		</div>
+		<div>
+			<button class="big" (click)="send()">SEND</button>
+		</div> 
+	</div>
+</div>
 
 				

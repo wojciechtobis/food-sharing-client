@@ -17,7 +17,7 @@ export class NewOfferComponent implements OnInit {
   itemName: FormControl;
   itemDate: FormControl;
   email: FormControl;
-  phone: FormControl;
+  userName: FormControl;
 
   items: {name: String, date: String}[];
   availabilities: string[];
@@ -29,7 +29,7 @@ export class NewOfferComponent implements OnInit {
     this.itemName = new FormControl();
     this.itemDate = new FormControl();
     this.email = new FormControl();
-    this.phone = new FormControl();
+    this.userName = new FormControl();
 
     this.availabilities = [];
     this.items = [];
@@ -42,9 +42,9 @@ export class NewOfferComponent implements OnInit {
       receiveTimes: this.availabilities,
       isForFoundationOnly: false,
       offerDescription: this.title.value,
-      ownerName: 1,
+      ownerName: this.userName.value,
       ownerEmail: this.email.value,
-      productIds: ['8ae39b7a-d064-48e2-8550-30a65da38a4d']
+      productIds: ['69311a62-7446-46b8-be79-a8a8534c56d8']
     };
     this.newOfferService.postNewOffer(newOffer)
       .subscribe(res => {
@@ -56,12 +56,25 @@ export class NewOfferComponent implements OnInit {
     const newItemName = this.itemName.value;
     const newItemDate = this.itemDate.value;
     const newItem = {name: newItemName, date: newItemDate};
-    this.items.push(newItem);
+
+    if (newItemName && newItemDate && this.items.filter(v => v.date === newItemDate && v.name === newItemName).length === 0) {
+      this.items.push(newItem);
+    }
   }
 
   public addAvailability() {
     const newAvailability = this.availaibility.value;
-    this.availabilities.push(newAvailability);
+
+    if (newAvailability && this.availabilities.filter(v => v === newAvailability).length === 0) {
+      this.availabilities.push(newAvailability);
+    }
   }
 
+  public deleteAvailability(avail: string) {
+    this.availabilities = this.availabilities.filter(v => v !== avail);
+  }
+
+  public deleteItem(item) {
+    this.items = this.items.filter(v => v.name !== item.name || v.date !== item.date);
+  }
 }

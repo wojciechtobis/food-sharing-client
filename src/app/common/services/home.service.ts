@@ -17,6 +17,14 @@ export class HomeService {
           return res.json();
         });
   }
+
+  getOffersByText(text: string): Observable<OrderDto[]> {
+      const apiUrl = 'http://fintess.azurewebsites.net/api/search?query=' + text;
+      return this.http.get(apiUrl)
+        .map(res =>  {
+          return res.json();
+        });
+  }
 }
 
 

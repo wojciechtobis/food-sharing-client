@@ -1,6 +1,7 @@
 import { OfferDto } from '../../dtos/offerdto';
 import { HomeService } from '../../services/home.service';
 import { Component, OnInit } from '@angular/core';
+import { FormControl } from '@angular/forms';
 import 'rxjs/Rx';
 
 @Component({
@@ -11,17 +12,30 @@ import 'rxjs/Rx';
 export class HomeComponent implements OnInit {
 
   public offers;
+  searchText: FormControl;
 
   constructor(private homeService: HomeService) { }
 
   ngOnInit() {
-    const dalsks = this.homeService.getOffers();
-    dalsks.subscribe(res =>  {
+    this.searchText = new FormControl();
+
+    const allOffers = this.homeService.getOffers();
+    allOffers.subscribe(res =>  {
       this.offers = res;
-      console.log(this.offers);
     });
 
   }
 
+  public searchOffer() {
+    const search = this.searchText.value;
+    const searchedOffers = this.homeService.getOffersByText(search);
+    searchedOffers.subscribe(res => {
+      this.offers = res;
+    });
+  }
+
+  public looolClick() {
+    console.log('loolClickadsasdsads');
+  }
 
 }
