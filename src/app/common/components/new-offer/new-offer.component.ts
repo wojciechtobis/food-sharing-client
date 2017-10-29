@@ -1,7 +1,7 @@
-import { NewOfferService } from '../../services/new-offer.service';
-import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl, ReactiveFormsModule } from '@angular/forms';
-import { Router } from '@angular/router';
+import {NewOfferService} from '../../services/new-offer.service';
+import {Component, OnInit} from '@angular/core';
+import {FormGroup, FormControl, ReactiveFormsModule} from '@angular/forms';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-new-offer',
@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
 })
 export class NewOfferComponent implements OnInit {
 
-  constructor(private newOfferService: NewOfferService, private router: Router) { }
+  constructor(private newOfferService: NewOfferService, private router: Router) {}
 
   title: FormControl;
   location: FormControl;
@@ -54,8 +54,8 @@ export class NewOfferComponent implements OnInit {
       .subscribe(res => {
         respGuid = res;
         if (respGuid.length === 36) {
-            this.router.navigate(['/new-offer-confirm']);
-          }
+          this.router.navigate(['/new-offer-confirm']);
+        }
       });
   }
 
@@ -67,13 +67,13 @@ export class NewOfferComponent implements OnInit {
     if (newItemName && newItemDate && this.items.filter(v => v.expirationDate === newItemDate && v.name === newItemName).length === 0) {
       let respGuid;
       this.newOfferService.postNewProduct(newItem)
-      .subscribe(res => {
-        respGuid = res;
-        console.log(respGuid);
-        if (respGuid.length === 36) {
-          this.items.push({name: newItemName, expirationDate: newItemDate, id: respGuid});
-        }
-      });
+        .subscribe(res => {
+          respGuid = res;
+          console.log(respGuid);
+          if (respGuid.length === 36) {
+            this.items.push({name: newItemName, expirationDate: newItemDate, id: respGuid});
+          }
+        });
     }
     this.itemName.setValue('');
     this.itemDate.setValue('');

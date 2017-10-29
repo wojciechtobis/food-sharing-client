@@ -3,6 +3,12 @@
 	height: 1060px;
 }
 
+.content{
+	background-color: #f1f1f1;
+	padding: 0px 10% 100px 10%;
+	margin:0;
+}
+
 .titleText{
 	@import url('https://fonts.googleapis.com/css?family=Poppins');
 	font-family: Poppins;

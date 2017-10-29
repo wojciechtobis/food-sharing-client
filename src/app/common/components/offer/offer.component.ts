@@ -1,7 +1,7 @@
 import { OfferService } from '../../services/offer.service';
 import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-offer',
@@ -12,7 +12,8 @@ export class OfferComponent implements OnInit {
 
   constructor(
       private offerService: OfferService,
-      private activatedRouter: ActivatedRoute
+      private activatedRouter: ActivatedRoute,
+      private router: Router
   ) { }
 
   private offerId: string;
@@ -40,7 +41,7 @@ export class OfferComponent implements OnInit {
 
   public send() {
     console.log('clicked send');
-
+    this.router.navigate(['/new-order-confirm']);
   }
 
   public selectProduct(product) {
