@@ -1,10 +1,10 @@
 <div class="content">
         <div class="homePage">
-    <div class="browser rowDiv" style="display: flex; flex-direction: row;align-items: center; flex-wrap: wrap;">
-        <h2 style="width: 60%">BROWSE</h2>
-        <div class="browseInputs buttonAddDiv" style="display: flex; flex-direction: row;align-items: center;">
-        	<label><input type="checkbox" [(formControl)]="filterCheckbox"/>I AM FOUNDATION</label>
-            <input class="inputText" style="height: 25px; margin:0 20px 0 0; "
+    <div class="browser rowDiv" style="display: flex; flex-direction: row;align-items: between; flex-wrap: wrap;">
+        <h2 >BROWSE</h2>
+        <div class="browseInputs buttonAddDiv" style="display: flex; flex-direction: row;align-items: center; width: 60%;flex-wrap: wrap; ">
+        	<label style=" min-width:80px; width: 20%;display: flex;"><input type="checkbox" style="min-width: 20px; margin: 0; width: 20%;" class="cb" [(formControl)]="filterCheckbox"/><p>NGO</p></label>
+            <input class="inputText" style="height: 25px; margin:0 20px 0 0; width: 30%; min-width: 220px;"
                 [formControl]="searchText">
             <button  style="width: 200px;"(click)="searchOffer()">SEARCH</button>
         </div>
@@ -13,7 +13,7 @@
         <div *ngFor="let offer of offers" style="display:flex">
             <mat-card [routerLink]="['/offer']" [queryParams]="{ offerId: offer.offerId }" >
                 <div class="offerDiv">
-                    <div class="offerPhoto"><img class="offerPhoto" src="{{offer.offerImage}}"></div>
+                    <div class="offerPhoto"><img class="offerPhoto" alt="Sample food photo" src="{{offer.offerImage}}"></div>
                     <h5>{{offer.offerDecription}}</h5>
                     <p class="data"><img src="https://i.imgur.com/EA94X9e.png" />{{offer.address}}</p>
                     <p class="data"><img src="https://i.imgur.com/NPmCHWe.png" />{{offer.creationDate}}</p>

@@ -82,10 +82,14 @@ body{
 h2{
 	font-family: Poppins, sans-serif;
 	font-weight: 800;
-	font-size: 60px;
+	font-size: calc( 25pt + ( 40 - 25) * ( 100vw - 400px ) / (800 - 400 ));
 	padding: 50px 0px;
 	text-transform: uppercase;
 	margin: 0px;
+	-webkit-margin-before: 0em;
+    -webkit-margin-after: 0em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
 }
 
 h5 {
