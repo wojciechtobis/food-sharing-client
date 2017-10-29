@@ -14,11 +14,13 @@ export class HomeComponent implements OnInit {
 
   public offers;
   searchText: FormControl;
+  filterCheckbox: FormControl;
 
   constructor(private homeService: HomeService) { }
 
   ngOnInit() {
     this.searchText = new FormControl();
+    this.filterCheckbox = new FormControl();
 
     const allOffers = this.homeService.getOffers();
     allOffers.subscribe(res =>  {
@@ -28,8 +30,10 @@ export class HomeComponent implements OnInit {
   }
 
   public searchOffer() {
-    const search = this.searchText.value;
-    const searchedOffers = this.homeService.getOffersByText(search);
+    const search = this.searchText.value == null ? '' : this.searchText.value;
+    const isFoundation =
+      this.filterCheckbox.value == null ? false : this.filterCheckbox.value;
+    const searchedOffers = this.homeService.getOffersByText(search, isFoundation);
     searchedOffers.subscribe(res => {
       this.offers = res;
     });

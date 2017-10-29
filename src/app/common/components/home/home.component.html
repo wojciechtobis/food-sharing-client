@@ -2,9 +2,10 @@
 	<div class="browser rowDiv">
 		<div class="browseText">BROWSE</div>
 		<div class="browseInputs buttonAddDiv">
+			<label><input type="checkbox" [formControl]="filterCheckbox"/>I AM FOUNDATION</label>
 			<input class="inputText"
 				[formControl]="searchText">
-			<button class="buttonSearch" (click)="searchOffer()">SEARCH</button>
+			<button class="buttonSearch" (click)="searchOffer()">FILTER</button>
 		</div> 
 	</div>
 	<div id="tiles" class="rowDiv">
