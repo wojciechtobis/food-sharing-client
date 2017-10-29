@@ -98,10 +98,6 @@ h5 {
 }
 
 mat-card{
-	display: flex;
-	flex-direction: row;
-	justify-content: space-around;
-	flex-wrap: wrap;
 	box-shadow: none !important;
 }
 
@@ -266,5 +262,10 @@ button:hover{
 	}
 }
 
-
+.rowDiv{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	flex-wrap: wrap;
+}
 
