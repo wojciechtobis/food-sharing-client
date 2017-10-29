@@ -1,6 +1,7 @@
 import { NewOfferService } from '../../services/new-offer.service';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, ReactiveFormsModule } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-new-offer',
@@ -9,7 +10,7 @@ import { FormGroup, FormControl, ReactiveFormsModule } from '@angular/forms';
 })
 export class NewOfferComponent implements OnInit {
 
-  constructor(private newOfferService: NewOfferService) { }
+  constructor(private newOfferService: NewOfferService, private router: Router) { }
 
   title: FormControl;
   location: FormControl;

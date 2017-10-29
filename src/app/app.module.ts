@@ -10,18 +10,21 @@ import { Routes, RouterModule } from '@angular/router';
 import { NewOfferComponent } from './common/components/new-offer/new-offer.component';
 import { NewOfferService } from './common/services/new-offer.service';
 import { ReactiveFormsModule } from '@angular/forms';
+import { NewOfferConfirmComponent } from './common/components/new-offer-confirm/new-offer-confirm.component';
 
 const appRoutes: Routes = [
   {path: '', redirectTo: 'home', pathMatch: 'full'},
   { path: 'home', component: HomeComponent },
-  { path: 'new-offer', component: NewOfferComponent }
+  { path: 'new-offer', component: NewOfferComponent },
+  { path: 'new-offer-confirm', component: NewOfferConfirmComponent}
 ];
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    NewOfferComponent
+    NewOfferComponent,
+    NewOfferConfirmComponent
   ],
   imports: [
     RouterModule.forRoot(appRoutes),
