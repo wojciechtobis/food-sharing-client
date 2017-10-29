@@ -18,8 +18,8 @@ export class HomeService {
         });
   }
 
-  getOffersByText(text: string): Observable<OrderDto[]> {
-      const apiUrl = 'http://fintess.azurewebsites.net/api/search?query=' + text;
+  getOffersByText(text: string, isFoundation: boolean): Observable<OrderDto[]> {
+      const apiUrl = 'http://fintess.azurewebsites.net/api/search?query=' + text + '&isFoundation=' + isFoundation;
       return this.http.get(apiUrl)
         .map(res =>  {
           return res.json();

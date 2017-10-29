@@ -19,6 +19,7 @@ export class NewOfferComponent implements OnInit {
   itemDate: FormControl;
   email: FormControl;
   userName: FormControl;
+  foundationsOnly: FormControl;
 
   items: {name: String, expirationDate: String, id: String}[];
   availabilities: string[];
@@ -31,6 +32,7 @@ export class NewOfferComponent implements OnInit {
     this.itemDate = new FormControl();
     this.email = new FormControl();
     this.userName = new FormControl();
+    this.foundationsOnly = new FormControl();
 
     this.availabilities = [];
     this.items = [];
@@ -41,7 +43,7 @@ export class NewOfferComponent implements OnInit {
     const newOffer = {
       address: this.location.value,
       receiveTimes: this.availabilities,
-      isForFoundationOnly: false,
+      isForFoundationOnly: this.foundationsOnly.value,
       offerDescription: this.title.value,
       ownerName: this.userName.value,
       ownerEmail: this.email.value,
@@ -61,17 +63,20 @@ export class NewOfferComponent implements OnInit {
     const newItemName = this.itemName.value;
     const newItemDate = this.itemDate.value;
     const newItem = {name: newItemName, expirationDate: newItemDate};
-
+    console.log('clicked add');
     if (newItemName && newItemDate && this.items.filter(v => v.expirationDate === newItemDate && v.name === newItemName).length === 0) {
       let respGuid;
       this.newOfferService.postNewProduct(newItem)
       .subscribe(res => {
         respGuid = res;
+        console.log(respGuid);
         if (respGuid.length === 36) {
           this.items.push({name: newItemName, expirationDate: newItemDate, id: respGuid});
         }
       });
     }
+    this.itemName.setValue('');
+    this.itemDate.setValue('');
   }
 
   public addAvailability() {
@@ -80,6 +85,7 @@ export class NewOfferComponent implements OnInit {
     if (newAvailability && this.availabilities.filter(v => v === newAvailability).length === 0) {
       this.availabilities.push(newAvailability);
     }
+    this.availaibility.setValue('');
   }
 
   public deleteAvailability(avail: string) {

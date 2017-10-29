@@ -28,8 +28,8 @@
 					<td><button class="del" (click)="deleteItem(it)"><span>Delete</span></button></td>
 				</tr>
 				<tr>
-					<td><input type="text" [formControl]="itemName"></td>
-					<td><input type="date" [formControl]="itemDate"></td>
+					<td><input type="text" [formControl]="itemName" value=""></td>
+					<td><input type="date" [formControl]="itemDate" value=""></td>
 					<td><button (click)="addItem()"><span>Add</span></button></td>
 				</tr>
 			</table>
@@ -63,6 +63,12 @@
 			<input type="text"
 				[formControl]="userName">
 		</div>
+		<div >
+			<h5>Foundations only</h5>
+			<input type="checkbox" 		
+				[formControl]="foundationsOnly">
+		</div>
+		
 		<div>
 			<button class="big" (click)="send()">SEND</button>
 		</div> 
